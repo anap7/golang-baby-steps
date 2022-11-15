@@ -2,6 +2,7 @@ package database
 
 import (
 	"database/sql"
+	"fmt"
 	"module/internal/order/entity"
 )
 
@@ -16,8 +17,9 @@ func NewOrderRepository(db *sql.DB) *OrderRepository {
 /*Método que faz parte do OrderRepository e aguarda a "instância" do struct order*/
 func (r *OrderRepository) Save(order *entity.Order) error {
 	//Preparando a query de inserção
-	stmt, err := r.Db.Prepare("INSERT INTO order (id, price, tax, final_price) VALUES (?, ?, ?, ?)")
+	stmt, err := r.Db.Prepare("INSERT INTO orders (id, price, tax, final_price) VALUES (?, ?, ?, ?)")
 	if err != nil {
+		fmt.Println("DEU ERRRO MEU NA INSERÇÃO DE DADOS");
 		return err
 	}
 	//Executando a query
