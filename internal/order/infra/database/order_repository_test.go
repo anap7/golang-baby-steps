@@ -1,11 +1,10 @@
 package database
 
 import (
-	"database/sql"
 	"fmt"
-	"module/internal/order/entity"
 	"testing"
-	
+	"database/sql"
+	"module/internal/order/entity"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/stretchr/testify/suite"
 )
