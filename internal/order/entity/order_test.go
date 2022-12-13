@@ -7,17 +7,17 @@ import (
 
 func TestGivenAnEmptyID_WhenCreateANewOrder_ThenShouldReceiveAnError(t *testing.T) {
 	order := Order{}
-	assert.Error(t, order.isValid(), "invalid id")
+	assert.Error(t, order.isValid(), "invalid id, try again")
 }
 
 func TestGivenAnEmptyPrice_WhenCreateANewOrder_ThenShouldReceiveAnError(t *testing.T) {
 	order := Order{ID: "123"}
-	assert.Error(t, order.isValid(), "invalid price")
+	assert.Error(t, order.isValid(), "invalid price, try again")
 }
 
 func TestGivenAnEmptyTax_WhenCreateANewOrder_ThenShouldReceiveAnError(t *testing.T) {
 	order := Order{ID: "123", Price: 10}
-	assert.Error(t, order.isValid(), "invalid tax")
+	assert.Error(t, order.isValid(), "invalid tax, try again")
 }
 
 func TestGivenAValidParams_WhenICallNewOrder_ThenIShouldReceiveCreateOrderWithAllParams(t *testing.T) {
