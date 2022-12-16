@@ -24,7 +24,7 @@ func main() {
 	}()
 
 	//Thread 01
-	/*Estou jogando a variável da thread 02 pora a thread 01*/
+	/*Estou jogando a variável da thread 02 para a thread 01*/
 	msg := <-canal
 	fmt.Println(msg)
 
